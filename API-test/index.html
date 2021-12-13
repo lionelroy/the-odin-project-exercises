@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gif Generator</title>
+</head>
+<body>
+  <input type="text" placeholder="search here..." id="searchField" value="" style="position: center;">
+  <button onclick="newGif()">New Gif</button>
+  <img src="#" style="position: absolute; padding-left: 10px;">
+ 
+  <script>
+    const search = document.querySelector('#searchField');
+    const newGifBtn = document.querySelector('button');
+    const img = document.querySelector('img');
+
+    async function newGif() {
+      const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=yJwzEEzgh8nW7ah9E2c5mKB28M7mb5ZO&s=bunny' + search.value ,{mode: 'cors'});
+      const gifData = await response.json();
+      img.src = gifData.data.images.original.url;
+    };
+    newGif() //This is so a new gif is loaded as soon as the page loads
+  </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Test</title>
+        <meta charset="UTF-8"/>
+        <style>
+            li {
+               background-color: blue;
+               border-radius: 5px;
+               margin: 5px;
+               padding: 4px;
+               padding-left: 4px;
+               padding-right: 75px;
+               display: inline-block;
+            }
+        </style>
+    </head>
+   
+    <body>
+
+        <!-- -------------Weather App----------- -->
+        <!-- <label for="weather">Select the weather type today: </label>
+        <select id="weather">
+          <option value="">--Make a choice--</option>
+          <option value="sunny">Sunny</option>
+          <option value="rainy">Rainy</option>
+          <option value="snowing">Snowing</option>
+          <option value="overcast">Overcast</option>
+        </select>
+        
+        <p></p> -->
+
+
+        <!-- ----------------Select month -->
+        <label for="Month">Select month: </label>
+        <select id="Month"> 
+        <option value="January">January</option> 
+        <option value="February">February</option> 
+        <option value="March">March</option> 
+        <option value="April">April</option> 
+        <option value="May">May</option> 
+        <option value="June">June</option> 
+        <option value="July">July</option> 
+        <option value="August">August</option> a
+        <option value="September">September</option> 
+        <option value="October">October</option> 
+        <option value="November">November</option> 
+        <option value="December">December</option> 
+        </select> 
+         <!-------------------------change webpage style-------------------- -->
+         <label for="theme">Select theme: </label>
+         <select id="theme"> 
+         <option value="white">White</option> 
+         <option value="black">Black</option> 
+         <option value="yellow">Yellow</option> 
+         <option value="purple">Purple</option> 
+         <option value="psychedelic">psychedelic</option> 
+         </select> 
+ 
+        <h1>Month and Theme selectors</h1> 
+        <h2></h2>
+        <ul></ul>               
+
+
+
+
+
+        <script>
+
+        // -------------Calendar App------------ 
+        const select = document.querySelector('select');
+        const list = document.querySelector('ul');
+        const h1 = document.querySelector('h2');
+        
+        select.onchange = function() {
+        const choice = select.value;
+        
+        // ADD CONDITIONAL HERE
+        switch (choice) {
+            case 'February':
+            days = 28;
+            break;
+            case 'April': case 'July': case 'September': case 'November': 
+            days = 30;
+            break;
+            default:
+            days = 31;
+        }
+        
+          createCalendar(days, choice);
+        }
+        
+        function createCalendar(days, choice) {
+          list.innerHTML = '';
+          h1.textContent = choice;
+          for (let i = 1; i <= days; i++) {
+            const listItem = document.createElement('li');
+            listItem.textContent = i;
+            list.appendChild(listItem);
+          }
+        }
+        
+        createCalendar(31,'January');
+
+
+
+
+
+
+            //-------------Weather App-----------
+            // const select = document.querySelector('select');
+            // const para = document.querySelector('p');
+
+            // select.addEventListener('change', setWeather);
+
+            // function setWeather() {
+            // const choice = select.value;
+
+            // switch (choice) {
+            //     case 'sunny':
+            //     para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+            //     break;
+            //     case 'rainy':
+            //     para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+            //     break;
+            //     case 'snowing':
+            //     para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+            //     break;
+            //     case 'overcast':
+            //     para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+            //     break;
+            //     default:
+            //     para.textContent = '';
+            // }
+            // }
+
+
+
+            // -----------------------change webpage style--------------------
+            const theme = document.getElementById('theme');
+            const html = document.querySelector('html');
+
+            theme.onchange = function() {
+            const choice = theme.value;
+
+            // ADD SWITCH STATEMENT
+            switch (choice) {
+                case "black":
+                update('black', 'white');
+                break;
+                case "yellow":
+                update('yellow', 'black');
+                break;
+                case "purple":
+                update('purple', 'white');
+                break;
+                case "psychedelic":
+                update('cyan', 'magenta');
+                break;
+                default:
+                update('white', 'black');
+            }
+            }
+
+            function update(bgColor, textColor) {
+            html.style.backgroundColor = bgColor;
+            html.style.color = textColor;
+            }
+
+
+            
+
+
+
+
+            // ----------------------Username and password prompt-----------------
+            //let userName = prompt("Who's there?", '');
+
+            //if (userName === 'Admin') {
+
+            //    let pass = prompt('Password?', '');
+
+            //    if (pass === 'TheMaster') {
+            //        alert( 'Welcome!' );
+            //    } else if (pass === '' || pass === null) {
+            //       alert( 'Canceled' );
+            //   } else {
+            //        alert( 'Wrong password' );
+            //    }
+
+            //    } else if (userName === '' || userName === null) {
+            //       alert( 'Canceled' );
+            //    } else {
+            //        alert( "I don't know you" );
+            //    }
+
+
+
+            // ---------------------------declaring variables-------------------
+            //const max = 57
+            //let  actual = max - 13
+            //let percentage = actual/max
+            //console.log(percentage)
+
+            //let message 
+            //message = "hello" ;
+            //   OR YOU CAN USE
+            //let message = "hello"
+            //alert(message);
+
+            //let user ="John", age = 25, message = "hello" ;
+            // THE FOLLOWING METHOD IS PREFFERED
+            //let user ="John"
+            //let age = 25
+            //let message = "hello"
+
+
+
+            // convention --- camelCase for unknown constants like pageLoadTime.
+            // use capital letters for known const like COLOR_ORANGE=#ff7f00
+        </script>
+    </body>
+</html> 
