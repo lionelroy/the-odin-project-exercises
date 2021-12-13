@@ -38,7 +38,7 @@
   clock.start();
 
 
-//  Rafactor code to use Class instead of function
+//  Refactor code to use Class instead of function
   class Clock {
     constructor({ template }) {
       this.template = template;
