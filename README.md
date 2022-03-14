@@ -1,1 +1,1 @@
-<h3>List of tests and and exercises I went through with The Odin Project</h3>
+<h3>List of exercises from The Odin Project full stack Javascript curriculum</h3>
